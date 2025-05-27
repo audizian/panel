@@ -71,7 +71,7 @@ class BackupRemoteUploadController extends Controller
 
         // Get the S3 client
         $client = $adapter->getClient();
-        $expires = CarbonImmutable::now()->addMinutes(config('backups.presigned_url_lifespan', 60));
+        $expires = CarbonImmutable::now()->addMinutes(config('backup.presigned_url_lifespan', 60));
 
         // Params for generating the presigned urls
         $params = [
